@@ -1,0 +1,17 @@
+# Bytecode & Python Caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary DOCX outputs (except base template)
+*.docx
+!templates/base_template.docx
+
+# Scratch & Virtual Environments
+scratch/
+.venv/
+venv/
+
+# OS specific files
+.DS_Store
+Thumbs.db

@@ -214,6 +214,7 @@ Saat membuat laporan baru:
    Simpan ke scratch JSON (misal `<scratch>/report_data.json`).
 4. **Jalankan Generator**:
    ```powershell
-   uv run --with python-docx --with PySastrawi python "C:\Users\ggwpy\.agents\skills\yuss-males-laprak\scripts\generate_report.py" --input "<scratch>/report_data.json" --output "<target_dir>/f5512520089_prak_<mata_kuliah>_<N>.docx" --scan-dir "<target_dir>"
+   uv run --with python-docx --with PySastrawi python "<skill_dir>/scripts/generate_report.py" --input "<scratch>/report_data.json" --output "<target_dir>/f5512520089_prak_<mata_kuliah>_<N>.docx" --scan-dir "<target_dir>"
    ```
+   *(Catatan: `<skill_dir>` adalah path absolut atau relatif ke direktori root skill ini).*
 5. **Verifikasi Output**: Pastikan setiap bab berada di halaman baru (Page Break mutlak) dan konfirmasikan hasilnya kepada pengguna.
