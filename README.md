@@ -1,72 +1,59 @@
-# Yuss Males Laprak 📝
+# Yusfi's Agent Skills 🚀
 
-[![skills.sh](https://skills.sh/b/mohyusfi/yuss-males-laprak)](https://skills.sh/mohyusfi/yuss-males-laprak)
+Kumpulan custom agent skills untuk Google Antigravity, Claude Code, GitHub Copilot, dan Cursor.
 
-Skill automasi laporan praktikum akademik siap kumpul berformat Microsoft Word (`.docx`) untuk AI Coding Agents (**Antigravity**, **Claude Code**, **Cursor**, **Windsurf**, dll.).
-
-Dirancang khusus untuk mahasiswa dan praktikan yang ingin menghasilkan laporan praktikum dengan presisi tipografi akademik tinggi sesuai standar perguruan tinggi.
+Repository ini menggunakan pola monorepo terpusat untuk mempermudah pemeliharaan, pengembangan, dan distribusi skills.
 
 ---
 
-## ✨ Fitur Utama
+## 📦 Katalog Skills
 
-- **Standar Tata Tulis Akademik Resmi**: Margin 4-4-3-3 cm (A4), font Times New Roman 12 pt, 1.5 spasi, perataan *Justified*.
-- **Integrasi Heading Native Word**: Heading 1, 2, dan 3 berbasis OpenXML terintegrasi langsung dengan Microsoft Word Navigation Pane.
-- **Otomasi Cetak Miring Non-KBBI**: Mendeteksi dan memiringkan (*italic*) istilah asing/teknis non-KBBI secara otomatis menggunakan `PySastrawi`.
-- **Sanitasi Tangkapan Layar Asdos**: Menghapus tangkapan layar modul asisten laboratorium dan menggantikannya dengan penanda gambar `[Sisipkan Gambar: ...]` dengan posisi perataan rapi.
-- **Hierarki Penomoran Native**: Penomoran daftar otomatis (`1.`, `a.`, `1)`) menggunakan `<w:numPr>`.
-- **Page Break Mutlak**: Menjamin setiap bab berdiri sendiri pada halaman baru (Halaman Sampul, Bab II, Bab III, Bab IV, Bab V, Daftar Pustaka).
-- **Bab V Kumulatif**: Otomatis memindai riwayat kesimpulan dari dokumen laporan sebelumnya di folder kerja.
-- **Daftar Pustaka APA 7th Edition**: Menghubungkan sitasi ilmiah *open-access* ($\ge 2020$) secara otomatis ke daftar pustaka berformat hanging indent.
+| Skill | Deskripsi | Perintah Instalasi |
+| :--- | :--- | :--- |
+| **[`yuss-males-laprak`](./skills/yuss-males-laprak)** | Pembuat laporan praktikum Word otomatis sesuai format akademik (margin 4-4-3-3 cm, Times New Roman 12 pt, 1.5 spasi, heading terintegrasi Navigation Pane, pembersihan foto modul asdos). | `npx skills add mohyusfi/skills --skill yuss-males-laprak` |
 
 ---
 
 ## 🚀 Cara Instalasi
 
-Pasang skill ini ke agent AI Anda menggunakan CLI resmi [skills.sh](https://skills.sh/):
-
+### 1. Menginstal Skill Tertentu
+Gunakan opsi `--skill` untuk memasang satu skill spesifik:
 ```bash
-npx skills add mohyusfi/yuss-males-laprak
+npx skills add mohyusfi/skills --skill yuss-males-laprak
 ```
-
-Untuk melihat daftar skill yang tersedia di repositori sebelum instalasi:
+*Atau menggunakan notasi `@`:*
 ```bash
-npx skills add mohyusfi/yuss-males-laprak --list
+npx skills add mohyusfi/skills@yuss-males-laprak
+```
+
+### 2. Menginstal Semua Skill Sekaligus
+```bash
+npx skills add mohyusfi/skills --all
+```
+
+### 3. Memperbarui Skills ke Versi Terbaru
+```bash
+npx skills update
 ```
 
 ---
 
-## 📋 Prasyarat Sistem
+## 🛠️ Pengembangan (Untuk Kontributor / Pemilik)
 
-- **Python 3.10+**
-- **[uv](https://docs.astral.sh/uv/)** (direkomendasikan untuk eksekusi dependensi cepat)
-- Dependensi Python:
-  - `python-docx`
-  - `PySastrawi`
-
----
-
-## 📂 Struktur Repositori
-
-```text
-yuss-males-laprak/
-├── SKILL.md                          # Definisi instruksi skill untuk AI agent
-├── README.md                         # Dokumentasi repositori
-├── .gitignore                        # Filter cache dan file luaran
-├── references/
-│   └── report_guidelines.md          # Panduan tata tulis & hierarki dokumen
-├── scripts/
-│   ├── docx_styler.py                # Engine styling dokumen docx & OpenXML
-│   ├── kbbi_italicizer.py            # Modul cetak miring kata non-KBBI
-│   └── generate_report.py            # CLI generator laporan praktikum
-└── templates/
-    └── base_template.docx            # Template dasar Microsoft Word
-```
+1. Clone repositori ini:
+   ```bash
+   git clone https://github.com/mohyusfi/skills.git
+   ```
+2. Buat folder skill baru di dalam folder `skills/<nama-skill>/` lengkap dengan `SKILL.md`.
+3. Commit dan push ke branch `main`:
+   ```bash
+   git add .
+   git commit -m "feat: tambah skill baru"
+   git push origin main
+   ```
+4. Skill baru akan langsung tersedia dan bisa diinstal melalui `npx skills add mohyusfi/skills --skill <nama-skill>`.
 
 ---
 
-## 👤 Pembuat & Lisensi
-
-- **Nama**: MOH. YUSFI LAKHAFIDUN
-- **GitHub**: [@mohyusfi](https://github.com/mohyusfi)
-- **Lisensi**: MIT License
+## 📄 Lisensi
+[MIT License](./LICENSE)
